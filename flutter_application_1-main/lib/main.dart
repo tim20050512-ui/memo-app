@@ -3,8 +3,16 @@ import 'package:flutter_application_1/memo_screen.dart';//子模組
 import 'package:flutter_application_1/table_screen.dart';//子模組
 import 'package:flutter_application_1/calendar_screen.dart';//子模組
 import 'package:flutter_localizations/flutter_localizations.dart';//系統內建文字變成中文
+import 'package:flutter_application_1/widget_service.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // 啟動時即時更新一次桌面小工具，確保資料對齊
+  try {
+    await WidgetService.updateWidget();
+  } catch (e) {
+    // 容錯機制
+  }
   runApp(const MyApp());//點開app後執行，透過runApp讓app填滿整個畫面
 }
 

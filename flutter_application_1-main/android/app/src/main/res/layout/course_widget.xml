@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/widget_bg_empty"
+    android:gravity="center">
+
+    <!-- 有課狀態 Layout -->
+    <LinearLayout
+        android:id="@+id/layout_active"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="start|top"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/widget_label_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下一堂課"
+            android:textColor="#555555"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp"/>
+
+        <TextView
+            android:id="@+id/widget_course_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="行動通訊實作"
+            android:textColor="#333333"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="start"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:layout_marginBottom="6dp"/>
+
+        <TextView
+            android:id="@+id/widget_course_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="09:10 - 12:00"
+            android:textColor="#666666"
+            android:textSize="15sp"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/widget_course_room"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="電資大樓 102"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp"
+            android:background="@drawable/capsule_bg"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <!-- 無課狀態 Layout -->
+    <LinearLayout
+        android:id="@+id/layout_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/widget_empty_icon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@android:drawable/ic_menu_today"
+            android:tint="#2D6A4F"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="No Class Icon"/>
+
+        <TextView
+            android:id="@+id/widget_empty_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="今天的課程都完畢嘍!"
+            android:textColor="#2D6A4F"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+    </LinearLayout>
+</LinearLayout>
